@@ -1,12 +1,16 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Ionic Blank
+      Reddit Clone /r/aww
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs">docs</a> will be your guide.</p>
+  <ion-list>
+    <ion-item (click)="goToDetail(post)" *ngFor="let post of posts">
+      <img [src]="post.data.thumbnail" alt="thumb" class="thumbnail">
+      <ion-label>{{ post.data.title }}</ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
